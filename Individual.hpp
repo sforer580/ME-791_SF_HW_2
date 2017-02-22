@@ -17,15 +17,14 @@ class Individual
 {
     friend class Parameters;
     friend class Q_Learner;
-    friend class State;
+    friend class Enviornment;
     
 protected:
     
     
 public:
-    vector<State> pos;
-    
-    
+    int x;
+    int y;
     
     
 private:

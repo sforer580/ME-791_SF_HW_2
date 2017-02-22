@@ -20,8 +20,8 @@
 #include <random>
 
 #include "Parameters.hpp"
-#include "State.hpp"
 #include "Individual.hpp"
+#include "Enviornment.hpp"
 #include "Q_Learner.hpp"
 
 
@@ -29,7 +29,9 @@ int main()
 {
     srand(time(NULL));
     Parameters P;
+    Enviornment E;
     Q_Learner Q;
     Q.pP = &P;
+    Q.pE = &E;
     Q.Run_Program();
 }
