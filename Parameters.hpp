@@ -24,7 +24,10 @@ protected:
     
     
 public:
-    
+    int num_indv = 1;
+    int x_dim = 13;
+    int y_dim = 13;
+    int num_states = x_dim*y_dim;
     
     
     

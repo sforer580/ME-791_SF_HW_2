@@ -23,7 +23,8 @@ protected:
     
     
 public:
-    
+    int number;
+    int active;         //0=inactive, 1=active
     
     
     

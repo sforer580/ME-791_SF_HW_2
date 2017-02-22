@@ -23,7 +23,7 @@ protected:
     
     
 public:
-    
+    vector<State> pos;
     
     
     

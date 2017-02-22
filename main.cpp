@@ -31,4 +31,5 @@ int main()
     Parameters P;
     Q_Learner Q;
     Q.pP = &P;
+    Q.Run_Program();
 }
