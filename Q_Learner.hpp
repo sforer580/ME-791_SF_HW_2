@@ -42,7 +42,7 @@ public:
     void Display_Board();
     void Run_Program();
     
-   
+    
     
     
 private:
@@ -68,21 +68,24 @@ void Q_Learner::Build_Population()
 //Assigns the starting location for the agent
 void Q_Learner::Assign_Starting_Location()
 {
-    if ((pP->agent_start_x < 0)|| (pP->agent_start_x > pP->x_dim))
+    if ((pP->agent_start_x < 0)|| (pP->agent_start_x > pP->x_dim-1))
     {
         int r = rand() % pP->x_dim;
         pP->agent_start_x = r;
+        cout << "RANDOM AGENT_X_START ASSIGNMENT" << endl;
     }
-    if ((pP->agent_start_y < 0)|| (pP->agent_start_y > pP->y_dim))
+    if ((pP->agent_start_y < 0)|| (pP->agent_start_y > pP->y_dim-1))
     {
         int r = rand() % pP->y_dim;
         pP->agent_start_y = r;
+        cout << "RANDOM AGENT_Y_START ASSIGNMENT" << endl;
     }
     agent.at(0).x = pP->agent_start_x;
     agent.at(0).y = pP->agent_start_y;
     assert(agent.at(0).x > 0 || agent.at(0).x < pP->x_dim);
     assert(agent.at(0).y > 0 || agent.at(0).y < pP->y_dim);
     cout << "TEST A PASSED" << endl;
+    cout << endl;
     pE->board.at(agent.at(0).y).at(agent.at(0).x) = 1;
 }
 
@@ -107,15 +110,17 @@ void Q_Learner::Build_Board()
 //Assigns the goal location
 void Q_Learner::Assign_Goal_Location()
 {
-    if ((pP->goal_x < 0)|| (pP->goal_x > pP->x_dim))
+    if ((pP->goal_x < 0)|| (pP->goal_x > pP->x_dim-1))
     {
         int r = rand() % pP->x_dim;
         pP->goal_x = r;
+        cout << "RANDOM GOAL_X ASSIGNMENT" << endl;
     }
-    if ((pP->goal_y < 0)|| (pP->goal_y > pP->y_dim))
+    if ((pP->goal_y < 0)|| (pP->goal_y > pP->y_dim-1))
     {
         int r = rand() % pP->y_dim;
         pP->goal_y = r;
+        cout << "RANDOM GOAL_Y ASSIGNMENT" << endl;
     }
 }
 
@@ -187,7 +192,7 @@ void Q_Learner::Human_Move_Agent()
         new_x = agent.at(0).x - 1;
         new_y = agent.at(0).y;
     }
-    if ((new_x < 0) || (new_x > pP->x_dim) || (new_y < 0) || (new_y > pP->x_dim))
+    if ((new_x < 0) || (new_x > pP->x_dim-1) || (new_y < 0) || (new_y > pP->y_dim-1))
     {
         cout << "OUT OF BOUNDS" << endl;
     }
@@ -251,7 +256,7 @@ void Q_Learner::Auto_Move_Agent()
         new_y = agent.at(0).y - 1;
         cout << "MOVE UP" << endl;
     }
-    if ((new_x < 0) || (new_x > pP->x_dim) || (new_y < 0) || (new_y > pP->x_dim))
+    if ((new_x < 0) || (new_x > pP->x_dim-1) || (new_y < 0) || (new_y > pP->y_dim-1))
     {
         cout << "OUT OF BOUNDS" << endl;
     }

@@ -24,14 +24,14 @@ protected:
     
     
 public:
-    int num_indv = 1;
+    int num_indv = 1;                   //must be 1
     int x_dim = 13;
     int y_dim = 13;
     int num_states = x_dim*y_dim;
-    int goal_x = 5;
-    int goal_y = 5;
-    int agent_start_x = 20;
-    int agent_start_y = 0;
+    int goal_x = 10;                    //must be between 0 and x_dim-1 to be in bounds
+    int goal_y = 10;                    //must be between 0 and y_dim-1 to be in bounds
+    int agent_start_x = 5;             //must be between 0 and x_dim-1 to be in bounds
+    int agent_start_y = 5;             //must be between 0 and y_dim-1 to be in bounds
     
     
     
