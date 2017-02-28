@@ -40,6 +40,7 @@ public:
     void Run_Human_Control();
     void Run_Auto_Control();
     void Display_Board();
+    void Display_Agent_and_Gaol_Location();
     void Run_Program();
     
     
@@ -147,6 +148,16 @@ void Q_Learner::Display_Board()
     }
 }
 
+//-------------------------------------------------------------------------
+//Displays the board
+void Q_Learner::Display_Agent_and_Gaol_Location()
+{
+    cout << "AGENT LOCATION" << endl;
+    cout << "X" << "\t" << agent.at(0).x << "\t" << "Y" << "\t" << agent.at(0).y << endl;
+    cout << "Goal LOCATION" << endl;
+    cout << "X" << "\t" << pP->goal_x << "\t" << "Y" << "\t" << pP->goal_y << endl;
+}
+
 
 //-------------------------------------------------------------------------
 //Builds the grid world
@@ -159,6 +170,7 @@ void Q_Learner::Build_Grid_World()
     Assign_Goal_Value();
     cout << "INTIAL GRID" << endl;
     Display_Board();
+    Display_Agent_and_Gaol_Location();
 }
 
 
@@ -204,6 +216,7 @@ void Q_Learner::Human_Move_Agent()
         pE->board.at(agent.at(0).y).at(agent.at(0).x) = 1;
     }
     Display_Board();
+    Display_Agent_and_Gaol_Location();
 }
 
 //-------------------------------------------------------------------------
@@ -268,6 +281,7 @@ void Q_Learner::Auto_Move_Agent()
         pE->board.at(agent.at(0).y).at(agent.at(0).x) = 1;
     }
     Display_Board();
+    Display_Agent_and_Gaol_Location();
 }
 
 
